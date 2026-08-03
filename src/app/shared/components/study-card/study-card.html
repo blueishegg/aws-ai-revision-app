@@ -1,0 +1,83 @@
+<article class="study-card" aria-labelledby="study-card-title">
+	<header class="study-card__header">
+		<p class="study-card__type">{{ cardTypeLabel() }}</p>
+		<h3 id="study-card-title">{{ card().title }}</h3>
+		<p class="study-card__summary">{{ card().summary }}</p>
+	</header>
+
+	<section class="study-card__section" aria-label="Key points">
+		<h4>Key points</h4>
+		<ul>
+			@for (point of card().keyPoints; track point) {
+				<li>{{ point }}</li>
+			}
+		</ul>
+	</section>
+
+	@if (card().comparison; as comparison) {
+		<section class="study-card__section" aria-label="Comparison">
+			<h4>Comparison</h4>
+			<dl class="study-card__comparison-list">
+				@for (item of comparison; track item.label) {
+					<div>
+						<dt>{{ item.label }}</dt>
+						<dd>{{ item.description }}</dd>
+					</div>
+				}
+			</dl>
+		</section>
+	}
+
+	@if (card().examTip; as examTip) {
+		<section class="study-card__exam-tip" aria-label="Exam tip">
+			<h4>Exam tip</h4>
+			<p>{{ examTip }}</p>
+		</section>
+	}
+
+	<section class="study-card__meta" aria-label="Card metadata">
+		<mat-chip-set>
+			<mat-chip>{{ difficultyLabel() }}</mat-chip>
+			<mat-chip>{{ importanceLabel() }}</mat-chip>
+		</mat-chip-set>
+
+		@if (visibleTags().length > 0) {
+			<mat-chip-set aria-label="Card tags">
+				@for (tag of visibleTags(); track tag) {
+					<mat-chip>{{ tag }}</mat-chip>
+				}
+			</mat-chip-set>
+		}
+
+		<p class="study-card__source">{{ sourcePagesLabel() }}</p>
+	</section>
+
+	<section class="study-card__actions" aria-label="Study progress actions">
+		<button
+			type="button"
+			mat-stroked-button
+			[attr.aria-pressed]="completed()"
+			(click)="toggleCompleted()"
+		>
+			{{ completed() ? 'Completed' : 'Mark complete' }}
+		</button>
+
+		<button
+			type="button"
+			mat-stroked-button
+			[attr.aria-pressed]="bookmarked()"
+			(click)="toggleBookmarked()"
+		>
+			{{ bookmarked() ? 'Bookmarked' : 'Bookmark' }}
+		</button>
+
+		<button
+			type="button"
+			mat-stroked-button
+			[attr.aria-pressed]="difficult()"
+			(click)="toggleDifficult()"
+		>
+			{{ difficult() ? 'Difficult' : 'Mark difficult' }}
+		</button>
+	</section>
+</article>

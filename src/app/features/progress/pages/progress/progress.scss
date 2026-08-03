@@ -1,0 +1,59 @@
+.progress-panel {
+	display: grid;
+	gap: 0.75rem;
+	padding: 1.25rem;
+	border: 1px solid var(--app-border-color);
+	border-radius: var(--app-radius);
+	background: var(--app-surface-background);
+}
+
+.progress-panel + .progress-panel {
+	margin-top: 1rem;
+}
+
+.progress-panel h1,
+.progress-panel h2,
+.progress-panel h3 {
+	margin: 0;
+	color: var(--app-text-primary);
+}
+
+.progress-panel p {
+	margin: 0;
+	color: var(--app-text-secondary);
+	line-height: 1.6;
+}
+
+.progress-totals,
+.progress-topic-list {
+	margin: 0;
+	padding-left: 1.1rem;
+	display: grid;
+	gap: 0.4rem;
+	color: var(--app-text-secondary);
+}
+
+.progress-topic-list li {
+	display: grid;
+	gap: 0.25rem;
+}
+
+.progress-totals strong,
+.progress-topic-list strong {
+	color: var(--app-text-primary);
+}
+
+.progress-panel--reset {
+	background: #fff8ef;
+	border-style: dashed;
+}
+
+.progress-panel--reset button {
+	justify-self: start;
+}
+
+@media (min-width: 768px) {
+	.progress-panel {
+		padding: 1.5rem;
+	}
+}

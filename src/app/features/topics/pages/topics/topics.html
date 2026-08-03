@@ -1,5 +1,53 @@
-<app-page-placeholder
-	icon="library_books"
-	title="Topics"
-	description="Browse the AWS Certified AI Practitioner syllabus by subject."
-/>
+<section class="topics" aria-labelledby="topics-title">
+	<header class="topics__header">
+		<p class="topics__eyebrow">AWS Certified AI Practitioner</p>
+		<h1 id="topics-title">Revision topics</h1>
+		<p>
+			Choose a topic to start focused AIF-C01 revision. Each topic includes concise study cards you can complete at your own pace.
+		</p>
+	</header>
+
+	@if (content.loading()) {
+		<div class="topics__state" aria-live="polite">
+			<h2>Loading topics...</h2>
+			<p>Preparing revision content.</p>
+		</div>
+	} @else if (content.errorMessage(); as errorMessage) {
+		<div class="topics__state" aria-live="polite">
+			<h2>Topics unavailable</h2>
+			<p>{{ errorMessage }}</p>
+		</div>
+	} @else {
+		<div class="topics__grid">
+			@for (item of topicCards(); track item.topic.id) {
+				<mat-card class="topic-card" appearance="outlined">
+					<mat-card-content>
+						<div class="topic-card__heading">
+							<mat-icon aria-hidden="true">{{ item.topic.icon }}</mat-icon>
+							<h2>{{ item.topic.title }}</h2>
+						</div>
+
+						<p class="topic-card__description">{{ item.topic.description }}</p>
+
+						<div class="topic-card__meta" aria-label="Topic statistics">
+							<p>{{ item.topic.estimatedMinutes }} min</p>
+							<p>{{ item.cardCount }} cards</p>
+							<p>{{ item.completedCount }} completed</p>
+							<p>{{ item.completionPercentage }}% complete</p>
+						</div>
+
+						<mat-chip-set aria-label="Topic tags">
+							@for (tag of item.visibleTags; track tag) {
+								<mat-chip>{{ tag }}</mat-chip>
+							}
+						</mat-chip-set>
+					</mat-card-content>
+
+					<mat-card-actions>
+						<a mat-flat-button [routerLink]="['/study', item.topic.id]">{{ item.ctaLabel }}</a>
+					</mat-card-actions>
+				</mat-card>
+			}
+		</div>
+	}
+</section>

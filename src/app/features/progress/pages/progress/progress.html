@@ -1,5 +1,52 @@
-<app-page-placeholder
-	icon="trending_up"
-	title="Progress"
-	description="See completion, accuracy and revision activity over time."
-/>
+<section class="progress-panel" aria-labelledby="progress-title">
+	<h1 id="progress-title">Progress</h1>
+	<p>Track your study status saved in this browser.</p>
+</section>
+
+<section class="progress-panel" aria-labelledby="progress-totals-title">
+	<h2 id="progress-totals-title">Study totals</h2>
+	<ul class="progress-totals" aria-label="Study progress totals">
+		<li><strong>{{ studyProgress.completedCount() }}</strong> cards completed</li>
+		<li><strong>{{ studyProgress.bookmarkedCount() }}</strong> cards bookmarked</li>
+		<li><strong>{{ studyProgress.difficultCount() }}</strong> cards marked difficult</li>
+		<li><strong>{{ overallCompletionPercentage() }}%</strong> overall completion</li>
+	</ul>
+</section>
+
+<section class="progress-panel" aria-labelledby="progress-topic-title">
+	<h2 id="progress-topic-title">Topic completion</h2>
+
+	@if (topicSummaries().length === 0) {
+		<p>No enabled topics are available in this revision pack.</p>
+	} @else {
+		<ul class="progress-topic-list" aria-label="Per-topic completion summary">
+			@for (summary of topicSummaries(); track summary.topic.id) {
+				<li>
+					<h3>{{ summary.topic.title }}</h3>
+					<p>
+						{{ summary.completedCount }} of {{ summary.cardCount }} cards complete
+						({{ summary.completionPercentage }}%)
+					</p>
+				</li>
+			}
+		</ul>
+	}
+</section>
+
+<section class="progress-panel" aria-labelledby="progress-last-title">
+	<h2 id="progress-last-title">Last studied</h2>
+	@if (lastStudiedTopic(); as topic) {
+		<p>Most recent topic: <strong>{{ topic.title }}</strong></p>
+		<a mat-stroked-button [routerLink]="['/study', topic.id]">Continue topic</a>
+	} @else {
+		<p>No topic has been studied yet.</p>
+	}
+</section>
+
+<section class="progress-panel progress-panel--reset" aria-labelledby="progress-reset-title">
+	<h2 id="progress-reset-title">Reset progress</h2>
+	<p>
+		Reset removes locally stored study status from this browser. This action cannot be undone.
+	</p>
+	<button type="button" mat-stroked-button (click)="openResetDialog()">Reset progress</button>
+</section>

@@ -6,14 +6,23 @@
 	</p>
 	<div class="dashboard-hero__actions">
 		<a mat-flat-button class="dashboard-hero__primary" routerLink="/topics">Browse topics</a>
-		<a mat-stroked-button routerLink="/quiz">Try a quiz</a>
+		@if (hasLastStudiedTopic()) {
+			<a mat-stroked-button [routerLink]="continueStudyingLink()">Continue studying</a>
+		}
+		<a mat-stroked-button routerLink="/quiz">Try a quiz (Milestone 3)</a>
 	</div>
 </section>
 
 <section class="dashboard-actions" aria-labelledby="dashboard-actions-title">
 	<div class="dashboard-section-heading">
 		<h2 id="dashboard-actions-title">Start where you need to</h2>
-		<p>Choose the next step in your revision flow without any setup or saved progress.</p>
+		<p>Choose the next step in your revision flow with your current study progress.</p>
+	</div>
+
+	<div class="dashboard-summary" aria-label="Study summary">
+		<p><strong>{{ completedCount() }}</strong> cards completed</p>
+		<p><strong>{{ bookmarkedCount() }}</strong> cards bookmarked</p>
+		<p><strong>{{ difficultCount() }}</strong> cards marked difficult</p>
 	</div>
 
 	<div class="dashboard-actions__grid">
@@ -43,7 +52,7 @@
 				</p>
 			</mat-card-content>
 			<mat-card-actions>
-				<a mat-button routerLink="/study" aria-label="Start studying exam topics">Open study</a>
+				<a mat-button [routerLink]="startStudyingLink()" aria-label="Start studying exam topics">Open study</a>
 			</mat-card-actions>
 		</mat-card>
 
@@ -54,19 +63,19 @@
 				</div>
 				<h3 class="dashboard-card__title">Take a quiz</h3>
 				<p class="dashboard-card__description">
-					Check your understanding with practice questions covering the AIF-C01 material.
+					Quiz functionality is planned for Milestone 3 and will be added in the next phase.
 				</p>
 			</mat-card-content>
 			<mat-card-actions>
-				<a mat-button routerLink="/quiz" aria-label="Take a quiz on AIF-C01 material">Open quiz</a>
+				<a mat-button routerLink="/quiz" aria-label="Take a quiz on AIF-C01 material">Open quiz (Milestone 3)</a>
 			</mat-card-actions>
 		</mat-card>
 	</div>
 </section>
 
 <section class="dashboard-notice" aria-labelledby="dashboard-notice-title">
-	<h2 id="dashboard-notice-title">Milestone 1</h2>
+	<h2 id="dashboard-notice-title">Milestone 2</h2>
 	<p>
-		This first milestone sets up the revision flow and navigation. Detailed study content, quiz result workflows, and progress tracking will be added next.
+		Milestone 2 adds topic-aware study progress. Quiz creation and scoring workflows are scheduled for Milestone 3.
 	</p>
 </section>

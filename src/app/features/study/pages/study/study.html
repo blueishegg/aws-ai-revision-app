@@ -1,5 +1,61 @@
-<app-page-placeholder
-	icon="school"
-	title="Study"
-	description="Review concise explanations, comparisons and exam-focused notes."
-/>
+@if (content.loading()) {
+	<section class="study-state" aria-live="polite">
+		<h1>Study</h1>
+		<div class="study-loading">
+			<mat-progress-spinner mode="indeterminate" diameter="40" />
+			<p>Loading study content...</p>
+		</div>
+	</section>
+} @else if (content.errorMessage(); as errorMessage) {
+	<section class="study-state" aria-live="polite">
+		<h1>Study content unavailable</h1>
+		<p>{{ errorMessage }}</p>
+		<a mat-stroked-button routerLink="/topics">Back to topics</a>
+	</section>
+} @else if (requestedTopicId() === null) {
+	<section class="study-state">
+		<h1>Select a topic to study</h1>
+		<p>Choose a revision topic from the Topics page to begin focused study.</p>
+		<a mat-flat-button routerLink="/topics">Choose topic</a>
+	</section>
+} @else if (hasUnknownTopic()) {
+	<section class="study-state">
+		<h1>Topic not found</h1>
+		<p>The requested topic does not exist in this revision pack.</p>
+		<a mat-stroked-button routerLink="/topics">Browse topics</a>
+	</section>
+} @else if (selectedTopic(); as topic) {
+	<section class="study-flow">
+		<a class="study-breadcrumb" routerLink="/topics">Topics</a>
+
+		<header class="study-flow__header">
+			<h1>{{ topic.title }}</h1>
+			<p>{{ cardPositionLabel() }}</p>
+			<p>{{ topicCompletionPercentage() }}% topic complete</p>
+			<mat-progress-bar
+				mode="determinate"
+				[value]="topicCompletionPercentage()"
+				aria-label="Topic completion"
+			/>
+		</header>
+
+		@if (visibleCard(); as card) {
+			<app-study-card
+				[card]="card"
+				[completed]="isVisibleCardCompleted()"
+				[bookmarked]="isVisibleCardBookmarked()"
+				[difficult]="isVisibleCardDifficult()"
+				(completedChange)="onCompletedChange($event)"
+				(bookmarkedChange)="onBookmarkedChange($event)"
+				(difficultChange)="onDifficultChange($event)"
+			/>
+		}
+
+		<div class="study-flow__actions" aria-label="Card navigation">
+			<button type="button" mat-stroked-button [disabled]="!hasPreviousCard()" (click)="goToPreviousCard()">
+				Previous
+			</button>
+			<button type="button" mat-flat-button (click)="goToNextCard()">{{ nextButtonLabel() }}</button>
+		</div>
+	</section>
+}

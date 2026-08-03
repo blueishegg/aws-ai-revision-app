@@ -58,6 +58,14 @@ export const appFeaturePages: readonly AppFeaturePage[] = [
 		},
 	},
 	{
+		path: 'study/:topicId',
+		title: 'Study Topic | AWS AI Revision',
+		loadComponent: () =>
+			import('./features/study/pages/study/study').then(
+				(module) => module.Study,
+			),
+	},
+	{
 		path: 'quiz',
 		title: 'Quiz | AWS AI Revision',
 		loadComponent: () =>
