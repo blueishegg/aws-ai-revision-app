@@ -1,0 +1,177 @@
+[
+  {
+    "id": "AI-INTRO-001",
+    "topicId": "introduction-to-ai",
+    "title": "Artificial Intelligence",
+    "summary": "Artificial intelligence describes software systems that perform tasks usually linked to human intelligence, such as recognizing content, generating outputs from prompts, converting speech to text, and improving results through learning from data.",
+    "keyPoints": [
+      "AI systems can interpret inputs and produce useful outputs.",
+      "Examples include image generation and image recognition.",
+      "Speech-to-text is a practical AI capability.",
+      "Learning from data improves model behavior over time."
+    ],
+    "cardType": "definition",
+    "difficulty": "easy",
+    "importance": "high",
+    "order": 1,
+    "tags": [
+      "AI fundamentals",
+      "definitions"
+    ],
+    "sourcePages": [10],
+    "examTip": "For exam questions, focus on capabilities AI delivers rather than specific vendor tools."
+  },
+  {
+    "id": "AI-INTRO-002",
+    "topicId": "introduction-to-ai",
+    "title": "How an AI Model Learns",
+    "summary": "A data scientist prepares labeled training examples, trains a model to identify patterns, and then the model predicts classes for new user inputs based on what it learned during training.",
+    "keyPoints": [
+      "Training data pairs inputs with known outcomes.",
+      "Model training finds patterns that separate classes.",
+      "Classification output is a predicted category.",
+      "New unseen input is handled during inference."
+    ],
+    "cardType": "process",
+    "difficulty": "medium",
+    "importance": "high",
+    "order": 2,
+    "tags": [
+      "model training",
+      "inference",
+      "classification"
+    ],
+    "sourcePages": [11],
+    "examTip": "Distinguish clearly between training phase and inference phase in scenario questions."
+  },
+  {
+    "id": "AI-INTRO-003",
+    "topicId": "introduction-to-ai",
+    "title": "Classification",
+    "summary": "Classification is a supervised learning task where a model assigns a new item to one of several predefined labels, such as identifying which fruit category an input most likely belongs to.",
+    "keyPoints": [
+      "Classes are defined before model use.",
+      "Labeled examples are required during training.",
+      "Predictions return the most likely class.",
+      "Fruit sorting is a simple classification illustration."
+    ],
+    "cardType": "definition",
+    "difficulty": "easy",
+    "importance": "high",
+    "order": 3,
+    "tags": [
+      "classification",
+      "supervised learning"
+    ],
+    "sourcePages": [11]
+  },
+  {
+    "id": "AI-INTRO-004",
+    "topicId": "introduction-to-ai",
+    "title": "History of AI",
+    "summary": "AI has progressed through decades of research, changing compute power, and evolving methods, with key milestones that moved the field from early ideas to modern practical and generative applications.",
+    "keyPoints": [
+      "AI development happened in distinct periods.",
+      "Progress depended on algorithms, data, and compute.",
+      "Recent breakthroughs enabled broader real-world adoption.",
+      "Timeline questions often test sequence awareness."
+    ],
+    "cardType": "timeline",
+    "difficulty": "medium",
+    "importance": "medium",
+    "order": 4,
+    "tags": [
+      "history",
+      "timeline",
+      "foundations"
+    ],
+    "sourcePages": [12]
+  },
+  {
+    "id": "AI-INTRO-005",
+    "topicId": "introduction-to-ai",
+    "title": "Common AI Use Cases",
+    "summary": "AI supports many domains, including language tasks, gameplay decision-making, vehicle intelligence, speech processing, code assistance, medical support, process automation, and fraud detection in financial workflows.",
+    "keyPoints": [
+      "Language understanding and generation are common uses.",
+      "Speech technologies convert or analyze spoken content.",
+      "Automation can reduce repetitive manual work.",
+      "Fraud detection applies pattern recognition to transactions.",
+      "Healthcare scenarios include diagnostic support."
+    ],
+    "cardType": "examples",
+    "difficulty": "easy",
+    "importance": "medium",
+    "order": 5,
+    "tags": [
+      "use cases",
+      "applications"
+    ],
+    "sourcePages": [13]
+  },
+  {
+    "id": "AI-INTRO-006",
+    "topicId": "introduction-to-ai",
+    "title": "Intelligent Document Processing",
+    "summary": "Intelligent document processing combines computer vision, deep learning, and NLP to extract structured data from unstructured documents such as PDFs, then stores that extracted data in downstream systems like databases.",
+    "keyPoints": [
+      "Computer vision reads document layout and visual cues.",
+      "NLP helps interpret textual meaning.",
+      "Deep learning improves extraction accuracy.",
+      "Output is structured data ready for storage.",
+      "The workflow bridges documents to databases."
+    ],
+    "cardType": "process",
+    "difficulty": "medium",
+    "importance": "high",
+    "order": 6,
+    "tags": [
+      "IDP",
+      "document processing",
+      "NLP"
+    ],
+    "sourcePages": [14],
+    "examTip": "If a scenario asks about extracting fields from PDFs into records, IDP is usually the best fit."
+  },
+  {
+    "id": "AI-INTRO-007",
+    "topicId": "introduction-to-ai",
+    "title": "AI, ML, Deep Learning and Generative AI",
+    "summary": "AI is the broad field, machine learning is a subset that learns from data, deep learning is a specialized ML approach using layered neural networks, and generative AI is a focused area that creates new content.",
+    "keyPoints": [
+      "AI is the umbrella discipline.",
+      "Machine learning sits within AI.",
+      "Deep learning is a narrower ML subset.",
+      "Generative AI focuses on content creation.",
+      "Scope narrows as specialization increases."
+    ],
+    "cardType": "comparison",
+    "difficulty": "medium",
+    "importance": "high",
+    "order": 7,
+    "tags": [
+      "AI vs ML",
+      "deep learning",
+      "generative AI"
+    ],
+    "sourcePages": [15],
+    "comparison": [
+      {
+        "label": "Artificial Intelligence",
+        "description": "Broad area focused on systems performing intelligent tasks."
+      },
+      {
+        "label": "Machine Learning",
+        "description": "Subset of AI where systems learn patterns from data."
+      },
+      {
+        "label": "Deep Learning",
+        "description": "Subset of ML using multi-layer neural network architectures."
+      },
+      {
+        "label": "Generative AI",
+        "description": "Specialized deep learning area for generating new content outputs."
+      }
+    ]
+  }
+]

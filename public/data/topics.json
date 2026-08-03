@@ -1,0 +1,18 @@
+[
+  {
+    "id": "introduction-to-ai",
+    "title": "Introduction to Artificial Intelligence",
+    "shortTitle": "Introduction to AI",
+    "description": "Learn what AI is, how basic classification models work, common AI use cases and the relationship between AI, machine learning, deep learning and generative AI.",
+    "icon": "psychology",
+    "order": 1,
+    "enabled": true,
+    "estimatedMinutes": 10,
+    "cardCount": 7,
+    "tags": [
+      "AI fundamentals",
+      "artificial intelligence",
+      "AIF-C01"
+    ]
+  }
+]
