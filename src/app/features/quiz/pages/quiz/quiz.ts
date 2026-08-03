@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { PagePlaceholder } from '../../../../shared/components/page-placeholder/page-placeholder';
 
 @Component({
   selector: 'app-quiz',
-  imports: [],
+  imports: [PagePlaceholder],
   templateUrl: './quiz.html',
   styleUrl: './quiz.scss',
 })

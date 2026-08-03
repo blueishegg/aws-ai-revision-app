@@ -1,1 +1,22 @@
-<p>page-placeholder works!</p>
+<section class="page-placeholder" aria-labelledby="page-placeholder-title">
+	<div class="page-placeholder__card">
+		<p class="page-placeholder__eyebrow">{{ eyebrow() }}</p>
+
+		<div class="page-placeholder__header">
+			<div class="page-placeholder__icon-wrap" aria-hidden="true">
+				<mat-icon class="page-placeholder__icon">{{ icon() }}</mat-icon>
+			</div>
+
+			<div class="page-placeholder__heading-group">
+				<h1 id="page-placeholder-title" class="page-placeholder__title">
+					{{ title() }}
+				</h1>
+				<p class="page-placeholder__description">{{ description() }}</p>
+			</div>
+		</div>
+
+		<mat-chip-set aria-label="Page status">
+			<mat-chip class="page-placeholder__chip">{{ statusText() }}</mat-chip>
+		</mat-chip-set>
+	</div>
+</section>

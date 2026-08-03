@@ -1,1 +1,20 @@
-<p>not-found works!</p>
+<section class="not-found" aria-labelledby="not-found-title">
+	<div class="not-found__card">
+		<div class="not-found__icon-wrap" aria-hidden="true">
+			<mat-icon class="not-found__icon">error_outline</mat-icon>
+		</div>
+
+		<div class="not-found__content">
+			<p class="not-found__eyebrow">AWS AI Revision</p>
+			<h1 id="not-found-title" class="not-found__title">Page not found</h1>
+			<p class="not-found__description">
+				The requested revision page does not exist or may have moved. Return to the dashboard or continue browsing the available exam topics.
+			</p>
+		</div>
+
+		<div class="not-found__actions">
+			<a mat-flat-button class="not-found__primary" routerLink="/">Go to dashboard</a>
+			<a class="not-found__secondary" routerLink="/topics">Browse topics</a>
+		</div>
+	</div>
+</section>

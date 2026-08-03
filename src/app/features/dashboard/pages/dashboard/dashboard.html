@@ -1,1 +1,72 @@
-<p>dashboard works!</p>
+<section class="dashboard-hero" aria-labelledby="dashboard-title">
+	<p class="dashboard-hero__eyebrow">AWS Certified AI Practitioner</p>
+	<h1 id="dashboard-title" class="dashboard-hero__title">Prepare for the AIF-C01 exam</h1>
+	<p class="dashboard-hero__description">
+		Build confidence with focused study material, structured topic review, and quizzes designed for the AWS Certified AI Practitioner exam.
+	</p>
+	<div class="dashboard-hero__actions">
+		<a mat-flat-button class="dashboard-hero__primary" routerLink="/topics">Browse topics</a>
+		<a mat-stroked-button routerLink="/quiz">Try a quiz</a>
+	</div>
+</section>
+
+<section class="dashboard-actions" aria-labelledby="dashboard-actions-title">
+	<div class="dashboard-section-heading">
+		<h2 id="dashboard-actions-title">Start where you need to</h2>
+		<p>Choose the next step in your revision flow without any setup or saved progress.</p>
+	</div>
+
+	<div class="dashboard-actions__grid">
+		<mat-card class="dashboard-card" appearance="outlined">
+			<mat-card-content>
+				<div class="dashboard-card__icon" aria-hidden="true">
+					<mat-icon>library_books</mat-icon>
+				</div>
+				<h3 class="dashboard-card__title">Browse topics</h3>
+				<p class="dashboard-card__description">
+					Explore the syllabus by subject to see what the exam expects you to understand.
+				</p>
+			</mat-card-content>
+			<mat-card-actions>
+				<a mat-button routerLink="/topics" aria-label="Browse topics for the AIF-C01 exam">Open topics</a>
+			</mat-card-actions>
+		</mat-card>
+
+		<mat-card class="dashboard-card" appearance="outlined">
+			<mat-card-content>
+				<div class="dashboard-card__icon" aria-hidden="true">
+					<mat-icon>school</mat-icon>
+				</div>
+				<h3 class="dashboard-card__title">Start studying</h3>
+				<p class="dashboard-card__description">
+					Review concise explanations and exam-focused notes before moving on to questions.
+				</p>
+			</mat-card-content>
+			<mat-card-actions>
+				<a mat-button routerLink="/study" aria-label="Start studying exam topics">Open study</a>
+			</mat-card-actions>
+		</mat-card>
+
+		<mat-card class="dashboard-card" appearance="outlined">
+			<mat-card-content>
+				<div class="dashboard-card__icon" aria-hidden="true">
+					<mat-icon>quiz</mat-icon>
+				</div>
+				<h3 class="dashboard-card__title">Take a quiz</h3>
+				<p class="dashboard-card__description">
+					Check your understanding with practice questions covering the AIF-C01 material.
+				</p>
+			</mat-card-content>
+			<mat-card-actions>
+				<a mat-button routerLink="/quiz" aria-label="Take a quiz on AIF-C01 material">Open quiz</a>
+			</mat-card-actions>
+		</mat-card>
+	</div>
+</section>
+
+<section class="dashboard-notice" aria-labelledby="dashboard-notice-title">
+	<h2 id="dashboard-notice-title">Milestone 1</h2>
+	<p>
+		This first milestone sets up the revision flow and navigation. Detailed study content, quiz result workflows, and progress tracking will be added next.
+	</p>
+</section>
